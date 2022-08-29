@@ -1,0 +1,238 @@
+import React, { useState, useEffect } from "react";
+import "./Reviews.scss";
+import star from "../../Images/stars.svg";
+import uss from "../../Images/uss.svg";
+import file from "../../Images/file.svg";
+import emoji from "../../Images/emoji.svg";
+import axios from "axios";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { Rate } from "antd";
+import { MdVerified } from "react-icons/md";
+import { message } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
+import AllReviews from "./AllReview";
+
+const Reviews = (props) => {
+  const [rating, setRating] = useState(0);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const [review, setReview] = useState("");
+  const [reviewData, setReviewData] = useState([]);
+  const [value, setValue] = useState(0);
+  const desc = ["terrible", "bad", "normal", "good", "wonderful"];
+  const { token } = useParams();
+  const [emptyReview, setEmptyReview] = useState("");
+  const [count, setCount] = React.useState(1);
+  const [submitLoading, setSubmitLoading] = useState(false);
+  const [totalRating, setTotalRating] = useState(props.totalRating);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    getReviews();
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
+    }
+  });
+
+  const getReviews = async () => {
+    const formData = new FormData();
+    formData.append("apptoken", process.env.REACT_APP_RENI_TOKEN);
+    formData.append("producttoken", token);
+
+    try {
+      const res = await axios({
+        method: "POST",
+        url: `${process.env.REACT_APP_BASE}/v1/getProductReview`,
+        data: formData,
+      }).then((res) => {
+        if (res.data.success == false) {
+          setReviewData([]);
+          console.log(res.data);
+          setEmptyReview(res.data.success);
+        } else {
+          setReviewData(res.data.reviews);
+          console.log(res.data);
+          setEmptyReview(res.data.success);
+        }
+      });
+    } catch (err) {
+      console.log(err.message);
+      setTimeout(() => {
+        getReviews();
+      }, 4000);
+    }
+  };
+
+  const submitReview = async (e) => {
+    e.preventDefault();
+    setSubmitLoading(true);
+    const formData = new FormData();
+    formData.append("apptoken", process.env.REACT_APP_RENI_TOKEN);
+    formData.append("review", review);
+    formData.append("usertoken", user.usertoken);
+    formData.append("rating", value);
+    formData.append("producttoken", props.producttoken);
+    formData.append("fullname", user.fullname);
+    formData.append("picture", user.picture);
+
+    try {
+      const res = await axios({
+        method: "POST",
+        url: `${process.env.REACT_APP_BASE}/v1/sendReview`,
+        data: formData,
+      }).then((res) => {
+        if (res.data.success == true) {
+          setSubmitLoading(false);
+          message.success(res.data.message);
+          setValue(0);
+          setReview("");
+          getReviews();
+        } else {
+          setSubmitLoading(false);
+          message.info("Please add your rating");
+        }
+      });
+    } catch (err) {
+      setSubmitLoading(false);
+      message.error(err.message);
+    }
+  };
+
+  return (
+    <div className="www-rev">
+      <div className="top-rev-tab">
+        <h1>Reviews</h1>
+      </div>
+
+      <div className="total-rev-cont">
+        <div className="tt-rat">
+          <div className="total-rating-rev-cont">
+            <button className="t-rat">Product Total rating:</button>
+            {props.totalRating === null ? (
+              <span className="rating-no">0 Rating</span>
+            ) : (
+              <>
+                <span className="rating-no">{props.totalRating} Rating</span>
+              </>
+            )}
+          </div>
+
+          {props.totalRating === null ? (
+            <></>
+          ) : (
+            <>
+              <button>
+                <Link to={`/reviews/${token}`}> View All </Link>
+              </button>
+            </>
+          )}
+        </div>
+        {emptyReview === true ? (
+          <>
+            {" "}
+            {reviewData.slice(0, 5)?.map((reviewData) => {
+              const { picture, rating, real_date, review, username } =
+                reviewData;
+              return (
+                <div className="each-review-cont">
+                  <div className="user-rev">
+                    <img src={picture} alt="" />
+                    <p>{username}</p>
+                  </div>
+
+                  <div className="user-rev-message">
+                    <p>{review}</p>
+                  </div>
+
+                  <div className="user-rev-time">
+                    <p>{real_date}</p>
+
+                    <div className="stars-rev">
+                      <img src={star} alt="" />
+                      <h6>{rating} Star(s)</h6>
+                    </div>
+                  </div>
+
+                  <hr style={{ margin: "0px" }} />
+                </div>
+              );
+            })}
+          </>
+        ) : (
+          <>
+            <p className="mt-4">
+              {" "}
+              <MdVerified style={{ color: "#12957d", fontSize: "20px" }} /> Be
+              the first to write a review
+            </p>
+          </>
+        )}
+
+        {loggedIn === true ? (
+          <>
+            <form
+              action=""
+              className="form-rev-cont"
+              onSubmit={(e) => submitReview(e)}
+            >
+              {/* <textarea type="text" cols="20" rows="40px" /> */}
+              <div className="top-form-usee">
+                <div className="add-fm">
+                  <img src={user.picture} alt="" />
+                  <p>Add your review comment</p>
+                </div>
+
+                <div className="rev-star-cmt">
+                  <Rate tooltips={desc} onChange={setValue} value={value} />
+                </div>
+              </div>
+              <div className="real-form-shi">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="7"
+                  value={review}
+                  onChange={(e) => setReview(e.target.value)}
+                  required
+                ></textarea>
+                <div className="rev-form-bottom">
+                  <img src={file} alt="" />
+
+                  <div className="submit-rev">
+                    <img src={emoji} alt="" />
+                    {submitLoading === true ? (
+                      <>
+                        <LoadingOutlined
+                          style={{
+                            fontSize: 24,
+                          }}
+                          spin
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <button>Submit</button>
+                      </>
+                    )}{" "}
+                  </div>
+                </div>
+              </div>
+            </form>
+          </>
+        ) : (
+          <></>
+        )}
+
+        <br />
+      </div>
+    </div>
+  );
+};
+
+export default Reviews;

@@ -1,0 +1,43 @@
+.left-btn {
+      font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  color: #020e8a;
+  text-decoration: none;
+  background: #f2bf0e;
+  border-radius: 25px;
+  padding: 10px 15px;
+    cursor: pointer;
+
+}
+
+.right-btn {
+      font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  color: #020e8a;
+  text-decoration: none;
+  background: #f2bf0e;
+  border-radius: 25px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.test-cont {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 30px;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.back {
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+

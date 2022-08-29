@@ -1,0 +1,38 @@
+.loader-whole-cont {
+  background: #020e8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+
+
+.loader-cont {
+    margin-top: 120px;
+}
+
+
+.loader-img-cont {
+  width: 20%;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media (max-width:733px) {
+  .loader-img-cont {
+    width: 40%;
+  }
+}
+
+@media (max-width:407px) {
+  .loader-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  }
+}

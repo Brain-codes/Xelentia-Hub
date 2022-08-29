@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+.www-rev {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top-rev-tab {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  h1 {
+    font-family: "Mukta", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    color: #0052cc;
+    margin-bottom: 0px;
+  }
+
+  svg {
+    color: #0052cc;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+.total-rev-cont {
+  width: 95%;
+  margin-top: 40px;
+}
+
+.total-rating-rev-cont {
+  .t-rat {
+    font-family: "Mukta";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #0052cc;
+    background: #d9d9d9;
+    border-left: 9px solid #0052cc;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .rating-no {
+    font-family: "Mukta";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #00b512;
+    margin-left: 10px;
+  }
+}
+
+// EACH REVIEW FOR THE PRODUCT
+
+.each-review-cont {
+  margin-top: 30px;
+
+  .user-rev {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    p {
+      margin-bottom: 0;
+      font-family: "Mukta";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+
+      color: #1e1e1e;
+      margin-left: 10px;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #00b512;
+      border-radius: 50%;
+    }
+  }
+
+  .user-rev-message {
+    width: 100%;
+    margin-top: 10px;
+
+    p {
+      margin-bottom: 0;
+      font-family: "Mukta";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+
+      color: rgba(7, 9, 56, 0.9);
+    }
+  }
+
+  .user-rev-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+
+    p {
+      font-family: "Mukta";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      color: rgba(10, 16, 78, 0.58);
+      margin-bottom: 0px;
+    }
+
+    .stars-rev {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h6 {
+        margin-bottom: 0px;
+        font-family: "Mukta";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+
+        color: #000000;
+      }
+
+      img {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.top-form-usee {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+
+  .add-fm {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    p {
+      font-family: "Mukta";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      margin-bottom: 0;
+      margin-left: 10px;
+      color: #1d1d1d;
+    }
+  }
+
+  .rev-star-cmt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0052cc;
+    border-radius: 5px;
+    padding: 7px 10px;
+    img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+}
+.tt-rat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    font-family: "Mukta";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #0052cc;
+    background: #d9d9d9;
+    border-right: 9px solid #0052cc;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+
+    a {
+      text-decoration: none;
+      color: #0052cc;
+    }
+  }
+}
+.real-form-shi {
+  border: 2px solid rgba(0, 82, 204, 0.79);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 4px;
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    font-family: "Mukta";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgba(7, 9, 56, 0.9);
+  }
+
+  textarea:focus {
+    outline: none;
+    border: none;
+  }
+
+  .rev-form-bottom {
+    position: absolute;
+    bottom: 10px;
+    padding: 0px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .submit-rev {
+      button {
+        font-family: "Mukta";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: #ffffff;
+        background: #12957d;
+        border-radius: 7px;
+        border: none;
+      }
+
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+// @media (max-width: 760px) {
+//   .www-rev {
+//     margin-bottom: 80px;
+//   }
+
+
+// }
+
+@media (max-width: 416px) {
+  .ant-rate {
+    font-size: 15px;
+    line-height: normal;
+  }
+
+
+}
+
+@media (max-width:506px) {
+  .tt-rat {
+    button {
+      font-size: 12px;
+    }
+  }
+
+  .t-rat {
+    font-size: 12px !important;
+  }
+
+  .rating-no {
+    font-size: 12px !important;
+  }
+}
+
+
+.each-review-cont {
+.user-rev {
+  p {
+    font-size: 12px;
+  }
+}
+}
+
+.top-form-usee {
+  .add-fm {
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+#NOOOO {
+  display: none !important;
+}
+
+
+.div-wwww {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
