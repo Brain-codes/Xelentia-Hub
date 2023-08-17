@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const SectionOne = () => {
   return (
     <div className="sec1-whole-cont">
-      <div className="sec1-cont">
+      <div className="sec1-cont pt-3">
         <div className="left-sec1">
           <h1>Improve Your Skill & Gain More Knowledge</h1>
           <p>
@@ -39,7 +39,7 @@ const SectionOne = () => {
           </div>
         </div>
 
-        <div className="right-sec1">
+        <div className="right-sec1 mt-2">
           <img src={hero} alt="" />
         </div>
       </div>

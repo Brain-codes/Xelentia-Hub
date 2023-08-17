@@ -1,0 +1,230 @@
+.faq-whole-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 250px;
+  padding-bottom: 160px;
+  //   background: linear-gradient(
+  //     89.7deg,
+  //     rgba(255, 255, 255, 0) -30.36%,
+  //     #020e8a 99.74%
+  //   );
+  background-image: linear-gradient(
+      89.7deg,
+      rgba(255, 255, 255, 0.857) -30.36%,
+      #020e8a 99.74%
+    ),
+    url(https://images.unsplash.com/photo-1580795479225-c50ab8c3348d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGVscCUyMGNlbnRlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+
+  h5 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0px;
+    letter-spacing: 0.02em;
+    color: #020e8a;
+  }
+
+  h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 71px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin: 0;
+  }
+
+  p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    letter-spacing: 0.02em;
+    color: #525252;
+    margin: 0;
+  }
+}
+
+.sup-faq-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+
+.faq-left {
+  width: 45%;
+  h5 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #020e8a;
+    margin: 0;
+  }
+
+  h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 43px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  a {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    text-decoration: underline;
+  }
+}
+
+.faq-right {
+  width: 45%;
+}
+
+//ACCORDION  ANTD
+
+.ant-collapse {
+  background-color: transparent;
+  border: none;
+}
+.ant-collapse > .ant-collapse-item {
+  border-bottom: none;
+  background-color: transparent;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  border-bottom: none;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.ant-collapse-content {
+  border-top: none;
+}
+
+.ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-header-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin-right: 10px;
+}
+
+.acc-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 149.52%;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+  font-size: 21px;
+  color: #020e8a;
+}
+
+@media (max-width: 611px) {
+  .hero-faq {
+    h1 {
+      font-size: 50px;
+    }
+
+    p {
+      font-size: 15px;
+      color: white;
+    }
+
+    h5 {
+      font-size: 15px;
+    }
+  }
+
+  .faq-left {
+    width: 100%;
+    h1 {
+      font-size: 50px;
+    }
+    p {
+      margin-top: 0px;
+    }
+    p,
+    a {
+      font-size: 15px;
+    }
+
+    h5 {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 947px) {
+  .sup-faq-cont {
+    flex-direction: column;
+  }
+
+  .faq-right {
+    border-top: 2px solid #020e8a;
+    padding-top: 60px;
+    margin-top: 60px;
+    width: 100%;
+  }
+
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .ant-collapse-content > .ant-collapse-content-box {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

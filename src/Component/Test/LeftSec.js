@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import { NavData } from "./domdom";
 
 const LeftSec = () => {
+  console.log(NavData[0].img);
+
   return (
     <div>
       {" "}
       <>
         <h1>LEFT SIDE</h1>
+        <img src={NavData[0].img} alt="" />
         <h5>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
           repellat exercitationem laboriosam molestias reiciendis provident
@@ -34,6 +38,6 @@ const LeftSec = () => {
       </>
     </div>
   );
-}
+};
 
-export default LeftSec
+export default LeftSec;

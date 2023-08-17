@@ -1,0 +1,139 @@
+.footer-whole-cont {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #0b0d18;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.top-foot {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.logo-foot {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 30%;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0px;
+    letter-spacing: 0.02em;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+  }
+
+  h6 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px;
+    letter-spacing: 0.02em;
+    color: #020e8a;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.link-foot {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 20%;
+
+  h1 {
+    font-family: "Inter";
+    font-size: 12px;
+    margin: 0px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: rgb(172, 172, 172);
+    // margin-left: 5px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px;
+    letter-spacing: 0.02em;
+    margin-top: 10px;
+    color: #020e8a;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.each-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    font-size: 15px;
+    margin-right: 10px;
+    color: rgb(255, 255, 255);
+        margin-top: 10px;
+
+  }
+}
+
+.copi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  background-color: #f2bf0e;
+  width: 100%;
+
+  a {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: underline;
+    color: #0b0d18;
+    letter-spacing: 0.02em;
+    transition: 0.2s ease-in;
+  }
+
+  a:hover {
+    color: blueviolet;
+        text-decoration: underline;
+
+  }
+}
+
+@media (max-width: 652px) {
+  .footer-whole-cont {
+    flex-direction: column;
+  }
+
+  .logo-foot,
+  .link-foot {
+    width: 100%;
+  }
+
+  .link-foot {
+    margin-top: 60px;
+
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+}
